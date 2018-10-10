@@ -21,6 +21,7 @@ app.get("/" , (req, res) => {
 })
 
 // Code to run a server on the port 3003
-app.listen(3003, () => {
+const PORT = process.env.PORT || 3003
+app.listen(PORT, () => {
     console.log("Up and running");
 })
