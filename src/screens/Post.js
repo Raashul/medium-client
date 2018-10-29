@@ -35,6 +35,8 @@ class Post extends Component {
       if(this.state.post_data.post_detail){
         let title = this.state.post_data.post_detail.title;
         let author = this.state.post_data.post_detail.author;
+        let author_image = this.state.post_data.post_detail.author_image;
+        let author_subTitle = this.state.post_data.post_detail.author_subTitle;
         let publishDate = this.state.post_data.post_detail.publishDate;
         let timeStamp = this.state.post_data.post_detail.timeStamp;
         let content = this.state.post_data.post_detail.content;
@@ -42,13 +44,27 @@ class Post extends Component {
         return (
           <div className="post">
             <PostHeader />
-              <div class="row">
-                <div class="col-md-4"></div>
 
-                <div class="col-md-8">
-                  <div class="user_profile">{author}</div>
-                  <h1 class="post_title">{title}</h1>
-                  <div class="content">{content}</div>
+              <div class="row">
+                <div class="col-md-2"></div>
+
+                <div class="col-md-10">
+
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="author_image">{author_image}</div>
+                    </div>
+
+                    <div class="col-md-10">
+                      <p class="post_author">{author}</p>
+                      <p class="author_subTitle">{author_subTitle}</p>
+                    </div>
+                  </div>
+
+                    <div class="row">
+                      <h1 class="post_content">{content}</h1>
+                    </div>
+
                 </div>
               </div>
           </div>

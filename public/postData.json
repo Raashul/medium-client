@@ -2,6 +2,8 @@
   "post_detail":{
     "title": "What Truly Makes A Senior Developer",
     "author": "Brenn",
+    "author_image": "this is image.",
+    "author_subTitle": "passionate SR developer",
     "publishDate": "Oct 2",
     "timeStamp": "5",
     "content": "this is a content"
