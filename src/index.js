@@ -9,6 +9,7 @@ ReactDOM.render((
     <Switch>
       <Route exact path= '/' component = {Screens.Home} />
       <Route exact path= '/profile' component = {Screens.Profile} />
+      <Route exact path= '/profile/:post' component = {Screens.Post} />
     </Switch>
   </Router>
 

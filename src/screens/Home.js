@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import {Bootstrap} from 'react-bootstrap';
 import Header from '../components/header';
 import Jumbotron from '../components/jumbotron';
 import Nav from '../components/Navigation';
 import request from 'request';
+
 class Home extends Component {
   constructor(props){
     super(props);
@@ -123,14 +125,15 @@ class Home extends Component {
             <Header />
             <Nav />
             <div className="row">
-              <div className="col-xs-6 col-sm-4">
-                <div className="featuredPost_image">
-                  <img src={image} style={{height:imageSize.height, width: imageSize.width}}/>
-                </div> <br />
-                <div className="featuredPostsRight_Titles">
-                  <b><span>{title}</span></b> <br />
-                  <span>{subTitle}</span> <br /><br />
-                </div>
+                <div className="col-xs-6 col-sm-4">
+                  <Link to={`/profile/${title}`}>
+                    <div className="featuredPost_image">
+                      <img src={image} style={{height:imageSize.height, width: imageSize.width}}/>
+                    </div> <br />
+                    <div className="featuredPostsRight_Titles">
+                      <b><span>{title}</span></b> <br />
+                      <span>{subTitle}</span> <br /><br />
+                    </div> </Link>
                 <div className="featuredPosts_author">
                   {author}
                 </div>
