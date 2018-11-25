@@ -18,7 +18,7 @@ class Modal extends Component {
     if(process.env.REACT_APP_URL) console.log('testing', process.env.REACT_APP_URL);
     this.setState({classNameStyle:'modal fade in', display: 'block'});
   }
-  
+
   handleClose = () =>{
     this.setState({classNameStyle:'modal fade', display: 'none'});
   }
@@ -41,8 +41,8 @@ class Modal extends Component {
       display: this.state.display
     }
     return (
-      <div className= {style.classNameStyle} id= {idName} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" focus="true" style={{border_radius: '8px', color:'black', display: style.display}}>
-          <div className="modal-dialog" role="document">
+      <div className= {style.classNameStyle} id= {idName} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" focus="true" style={{border_radius: '6px', color:'black', display: style.display}}>
+          <div className="modal-dialog" role="document" className="Modal1">
           <div className="modal-content text-center" style={{background: backgroundColor}}>
           <div className="modal-body">
             <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.handleClose}><span aria-hidden="true">&times;</span></button>
