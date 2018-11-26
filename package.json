@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emotion": "^9.2.12",
+    "immutable": "^4.0.0-rc.12",
+    "is-image-url": "^1.1.8",
+    "is-url": "^1.2.4",
     "package.json": "^2.0.1",
-    "react": "^16.5.2",
+    "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.6.3",
+    "react-emotion": "^9.2.12",
+    "react-icons-kit": "^1.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "slate": "^0.44.6",
+    "slate-react": "^0.21.12"
   },
   "scripts": {
     "start": "react-scripts start",
