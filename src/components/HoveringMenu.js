@@ -8,6 +8,9 @@ import styled from 'react-emotion';
 import Video from '../components/video';
 import {Button, Icon, Menu, Toolbar} from '../components/components';
 
+import * as api from '../api';
+
+
 /**
  * Give the menu some styles.
  *
@@ -262,6 +265,25 @@ class HoveringMenu extends React.Component {
       rect.width / 2}px`
   }
 
+  handleSubmit() {
+    const payload = {
+      body: this.state.value,
+      title: 'test title',
+      "claps": 10,
+      "category": "Fitness"
+    }
+    console.log('body', payload.body);
+    //
+    // api.postNewStory(payload)
+    //   .then(response => {
+    //     console.log("response", response);
+    //   })
+    //   .catch(err => {
+    //     console.log('err', err);
+    //   })
+  }
+
+
   /**
    * Render.
    *
@@ -290,6 +312,7 @@ class HoveringMenu extends React.Component {
           renderEditor={this.renderEditor}
           renderMark={this.renderMark}
         />
+        <button onClick = {() => this.handleSubmit()}>submit</button>
       </div>
     )
   }

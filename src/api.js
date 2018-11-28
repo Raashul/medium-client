@@ -29,6 +29,5 @@ export function getHomeScreenData() {
 }
 
 export function postNewStory(payload) {
-  console.log(payload);
-  return "test";
+  return api.post('/api/posts', payload);
 }
