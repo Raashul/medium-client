@@ -4,6 +4,10 @@ import Header from '../components/header';
 import Jumbotron from '../components/jumbotron';
 import Nav from '../components/Navigation';
 import request from 'request';
+
+import * as api from '../api';
+
+
 class Home extends Component {
   constructor(props){
     super(props);
@@ -13,9 +17,17 @@ class Home extends Component {
     this.getData = this.getData.bind(this);
   }
 
-    componentDidMount(){
-    if(process.env.REACT_APP_URL) console.log('testing', process.env.REACT_APP_URL);
+  componentDidMount(){
     this.getData();
+
+    //calling first test api
+    api.getHomeScreenData()
+      .then(response => {
+        console.log("response", response);
+      })
+      .catch(err => {
+        console.log('err', err);
+      })
   }
 
   getData = () =>{
@@ -61,7 +73,6 @@ class Home extends Component {
         </div>
       );
     }
-    console.log(div);
     return div;
   }
 
@@ -82,7 +93,6 @@ class Home extends Component {
         </div>
       );
     }
-    console.log(div);
     return div;
   }
 

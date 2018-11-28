@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "emotion": "^9.2.12",
     "immutable": "^4.0.0-rc.12",
     "is-image-url": "^1.1.8",
     "is-url": "^1.2.4",
+    "lodash": "^4.17.11",
     "package.json": "^2.0.1",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
