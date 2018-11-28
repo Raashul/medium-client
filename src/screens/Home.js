@@ -36,11 +36,15 @@ class Home extends Component {
     }
     for(let i=0;i<3;i++){
       div.push(
-        <div className="row">
+        <div className="row" className="middlePost">
+        <div className="middleImage">
           <img src={this.state.homePageData.featuredPosts.image} style={{height:image.height,width:image.width}}/>
-          <b>{this.state.homePageData.featuredPosts.title}</b> <br />
-          {this.state.homePageData.featuredPosts.author}<br />
+          </div>
+          <div className="midleText">
+        <span className="featuredTitle">  <b>{this.state.homePageData.featuredPosts.title}</b></span> <br /><br/>
+          <span className="featuredAuthor"> {this.state.homePageData.featuredPosts.author}</span><br />
           {this.state.homePageData.featuredPosts.publishDate} . {this.state.homePageData.featuredPosts.timeStamp} min read <span className="glyphicon glyphicon-star-empty"></span>
+          </div>
         </div>
       );
     }
@@ -53,8 +57,9 @@ class Home extends Component {
       div.push(
         <div className='col_right'>
           <div className="col-bottom-featured-right">
-            <b><span key={i}>{this.state.homePageData.featuredPosts.topics[i]}</span></b>
-            <span>More</span>
+          <br/><br/>
+            <b><span style={{color:'black', fontSize:'16px' , float:'left'}} key={i}>{this.state.homePageData.featuredPosts.topics[i]}</span></b>
+            <span style={{float:'right'}}>More</span><br/>
             <hr />
           </div>
           {this.createBottomFeaturedPosts()};
@@ -73,12 +78,16 @@ class Home extends Component {
     }
     for(let i=0;i<4;i++){
       div.push(
-        <div className="col-bottom-featured-right-content">
-          <b>{this.state.homePageData.featuredPosts.title}</b> <br />
-          {this.state.homePageData.featuredPosts.subTag}
-          {this.state.homePageData.featuredPosts.author}<br />
+        <div className="col-bottom-featured-right-content" className="lowerPost">
+        <div className="lowertext">
+          <b>< span className="featuredTitle" style={{fontSize:"20px"}}>{this.state.homePageData.featuredPosts.title}</span></b> <br />
+          {this.state.homePageData.featuredPosts.subTag}<br/><br/>
+          <span className="featuredAuthor"> {this.state.homePageData.featuredPosts.author}</span><br />
           {this.state.homePageData.featuredPosts.publishDate} . {this.state.homePageData.featuredPosts.timeStamp} min read <span className="glyphicon glyphicon-star-empty"></span>
-          <img src={this.state.homePageData.featuredPosts.image} style={{height:image.height,width:image.width}}/>
+          </div>
+          <div className="lowerimage">
+        <img src={this.state.homePageData.featuredPosts.image} style={{height:'120px',width:'150px'}}/>
+        </div>
         </div>
       );
     }
@@ -95,11 +104,11 @@ class Home extends Component {
     for(let i=0;i<3;i++){
       div.push(
           <div className="leftSideBottom">
-            <b>{this.state.homePageData.featuredPosts.title}</b> <br />
-            {this.state.homePageData.featuredPosts.subTag}
-            {this.state.homePageData.featuredPosts.author}<br />
-            {this.state.homePageData.featuredPosts.publishDate} . {this.state.homePageData.featuredPosts.timeStamp} min read <span className="glyphicon glyphicon-star-empty"></span>
-          </div>
+            <span className="featuredTitle"><b>{this.state.homePageData.featuredPosts.title}</b></span> <br />
+          <br/>
+            <span className="featuredAuthor">{this.state.homePageData.featuredPosts.author}</span><br />
+            {this.state.homePageData.featuredPosts.publishDate} . {this.state.homePageData.featuredPosts.timeStamp} min read <span className="glyphicon glyphicon-star-empty"></span><br/><br/>
+        </div>
       );
     }
     return div;
@@ -124,14 +133,15 @@ class Home extends Component {
             <Nav />
             <div className="row">
               <div className="col-xs-6 col-sm-4">
-                <div className="featuredPost_image">
+                <div className="featuredPost_image" >
                   <img src={image} style={{height:imageSize.height, width: imageSize.width}}/>
                 </div> <br />
-                <div className="featuredPostsRight_Titles">
+                <div className="featuredPostsRight_Titles" className="featuredTitle" style={{fontSize:"20px"}}>
                   <b><span>{title}</span></b> <br />
-                  <span>{subTitle}</span> <br /><br />
+
                 </div>
-                <div className="featuredPosts_author">
+                <span>{subTitle}</span> <br /><br />
+                <div className="featuredPosts_author" className="featuredAuthor">
                   {author}
                 </div>
                 <div className="featuredPostsDate">
@@ -145,11 +155,11 @@ class Home extends Component {
                 <div className="featuredPost_image">
                   <img src={image} style={{height:imageSize.height, width: imageSize.width}}/>
                 </div> <br />
-                <div className="featuredPostsRight_Titles">
+                <div className="featuredPostsRight_Titles" className="featuredTitle" style={{fontSize:"20px"}}>
                   <b><span>{title}</span></b> <br />
-                  <span>{subTitle}</span> <br /><br />
                 </div>
-                <div className="featuredPosts_author">
+                <span>{subTitle}</span> <br /><br />
+                <div className="featuredPosts_author" className="featuredAuthor">
                   {author}
                 </div>
                 <div className="featuredPostsDate">
@@ -158,13 +168,17 @@ class Home extends Component {
               </div>
             </div>
             <hr />
+            <br />
+
             <Jumbotron />
-            <div className="row">
-              <div className="col-sm-9">
+            <br/>
+            <div className="row" classNme="bottom">
+              <div className="col-sm-9" className="bottomLeft">
                 {this.createBottomFeaturedPostsLeftTopics()}
               </div>
-              <div className="col-sm-3">
-                <b><span>Popular On Medium</span></b><hr />
+              <br/><br/>
+              <div className="col-sm-3" className="bottomRight">
+                <b><span style={{color:'black', fontSize:'16px'}}>Popular On Medium</span></b><hr />
                 {this.createBottomFeaturedPostsRight()}
               </div>
               </div>

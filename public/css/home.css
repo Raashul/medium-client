@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+body{
+font-family: sans-serif;
+color: rgb(0,0,0,0.54);
+
+}
+/*Header */
+
+.mainlogo{
+
+font-size:30px;
+font-weight: 800;
+color:black;
+font-family:serif;
+}
+
+.title{
+  float:left;
+}
+.Button1{
+  padding:10px;
+    float:right;
+}
+
+/*Navigation */
+.menu{
+    height: 70px;
+    padding: 7px 0;
+}
+ul{
+    list-style: none;
+}
+
+.menu ul li{
+    float: left;
+    padding: 0 1.2%;
+    height: 30px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color:rgb(0,0,0,0.54);
+    font-size: 14px;
+    line-height: 30px;
+
+}
+
+.menu ul li a:hover, .menu ul li a.active{
+    color: black;
+
+}
+/*modal */
+.Modal1{
+margin-left: 20%;
+margin-top:5%;
+align-items: center;
+width:60%;
+}
+.welcome{
+font-size: 40px;
+font-family: 'Abril Fatface', cursive;
+}
+/*jumbotron */
+.Panel{
+background:#E8F3EB;
+padding:25px 30px;
+}
+.welcomeMessage{
+
+  font-family:serif;
+  font-size:45px;
+  font-weight: 600;
+  line-height: 1.2em;
+  color:black;
+}
+.message1{
+  font-family: sans-serif;
+color: rgb(0,0,0,0.84);
+font-size: 18px;
+
+}
+button{
+  background-color: black;
+  border-radius: 5px;
+  height:40px;
+  width:100px;
+  font-family: sans-serif;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: black;
+}
+button a{
+    text-decoration: none;
+}
+.btn1{
+    background-color: black;
+    color: white;
+}
+.btn1 a{
+  color:white;
+}
+.btn1:hover{
+  background-color: #45b249;;
+}
+.btn2{
+    background-color: inherit;
+    color: rgb(0,0,0,0.84);
+  }
+.btn2 a{
+  text-decoration: none;
+    color: rgb(0,0,0,0.84);
+}
+.btn2:hover{
+  border-color: #45b249;;
+}
+/*featured post*/
+.middlePost{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  padding-bottom: 15px;
+}
+.middleImage{
+  float: left;
+  }
+.midleText{
+  padding-left:20px;
+  float: right;
+}
+.featuredTitle{
+    color:Black;
+    padding-bottom: 5px;
+}
+.featuredAuthor{
+  color:black;
+}
+.bottom{
+  grid-template-columns: auto auto auto;
+
+}
+.bottomLeft{
+  float: left;
+}
+.bottomRight{
+  float: right;
+}
+.lowerPost{
+  grid-template-columns: auto auto auto;
+
+  }
+.lowertext{
+  float: left;
+  Padding-right:20px;
+}
+.lowerimage{
+  float: right;
+
+  }
+/*Popular on medium*/
+.bottomRiight{
+  float:right;
+  position: fixed;
+   top: 7;
+   left: 80%;
+}

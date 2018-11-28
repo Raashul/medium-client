@@ -6,13 +6,15 @@ class Jumbotron extends Component {
   }
   render() {
     return (
-      <div className="jumbotron" style={{background:'#E8F3EB'}}>
-        <h1 className="display-4">Welcome to Medium Clone Where Words Matter</h1>
-        <p className="lead">We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</p>
-        <hr className="my-4" />
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a className="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
-        <a className="btn btn-default btn-lg" href="#" role="button">Learn more</a>
+
+
+      <div className="jumbotron" className="Panel">
+        <h1 className="welcomeMessage">Welcome to Medium Clone <br/> Where Words Matter</h1>
+        <p className="message1">We’ll deliver the best stories and ideas on the topics you <br/> care about most straight to your homepage, app, or inbox.</p>
+        <br/><br/>
+
+        <button type="button" className="btn1">< a href="#">Get Started</a> </button>&nbsp;
+        <button type="button" className="btn2"><a href="#">Learn more</a></button>
     </div>
 
     );

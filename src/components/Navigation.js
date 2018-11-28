@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
-import {Bootstrap} from 'react-bootstrap';
 class Nav extends Component {
   componentDidMount(){
     if(process.env.REACT_APP_URL) console.log('testing', process.env.REACT_APP_URL);
   }
   render() {
     return (
-      <div className = "navbardsf">
-      <nav className="navbar navbar-default">
-<div className="container-fluid">
-  <div className="navbar-header">
-    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span className="sr-only">Toggle navigation</span>
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-    </button>
-    <a className="navbar-brand" href="#">Medium Clone</a>
-  </div>
+      <div className="menu">
 
-  <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul className="nav navbar-nav">
-      <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
-      <li><a href="#">Link</a></li>
-    </ul>
-  </div>
+                <ul>
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#">POWERTRIP</a></li>
+                    <li><a href="#">CULTURE</a></li>
+                    <li><a href="#">TECH</a></li>
+                    <li><a href="#">STARTUPS</a></li>
+                    <li><a href="#">SELF</a></li>
+                    <li><a href="#">POLITICS</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">HEALTHS</a></li>
+                    <li><a href="#">POPULAR</a></li>
+                    <li><a href="#">COLLECTIONS</a></li>
+                    <li><a href="#">MORE </a></li>
+                  </ul>
+
+
 </div>
-</nav>
-      </div>
+
     );
   }
 }
