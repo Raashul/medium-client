@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
-import HoveringMenu from '../components/HoveringMenu';
+import * as Comps from '../components/index';
 class NewStory extends Component{
 
+  constructor(props){
+    super(props);
+    this.state = {
+      val: {}
+    }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
   componentDidMount(){
-    if(process.env.REACT_APP_URL) console.log('testing', process.env.REACT_APP_URL);
+
+  }
+
+  onChange = (value) =>{
+    this.setState({val:value});
+  }
+
+  onSubmit = () =>{
+    console.log(this.state.val);
   }
 
   render(){
     return(
       <div>
-        <HoveringMenu />
+        <Comps.HoveringMenu onEditorChange={this.onChange}/>
+        <button style={{backgroundColor:'white',color:'black'}}onClick={this.onSubmit}>Submit</button>
       </div>
     );
   }

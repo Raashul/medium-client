@@ -41,7 +41,7 @@ class Header extends Component {
     return (
       <div className="headers" style={{padding:'15px'}}>
         <div className= "row" >
-            <div className="col-sm-6" classname ="title"> <span className ="mainlogo"> Medium Clone</span>
+            <div className="col-sm-6" className ="title"> <span className ="mainlogo"> Medium Clone</span>
 
             </div>
             <div className="col-sm-6" className="Button1">

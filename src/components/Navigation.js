@@ -8,7 +8,7 @@ class Nav extends Component {
       <div className="menu">
 
                 <ul>
-                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#" className="active">HOME</a></li>
                     <li><a href="#">POWERTRIP</a></li>
                     <li><a href="#">CULTURE</a></li>
                     <li><a href="#">TECH</a></li>

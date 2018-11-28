@@ -9,8 +9,16 @@
 }
 
 .type_block{
+  color: black;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 1%;
+}
+
+.titleEditor{
+  font-weight: 800;
+  color: black;
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 12%;
-  margin-bottom: 30%;
 }

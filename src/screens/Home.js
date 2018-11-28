@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Bootstrap} from 'react-bootstrap';
-import Header from '../components/header';
-import Jumbotron from '../components/jumbotron';
-import Nav from '../components/Navigation';
+import * as Comps from '../components/index'
+
 import request from 'request';
 class Home extends Component {
   constructor(props){
@@ -66,7 +65,6 @@ class Home extends Component {
         </div>
       );
     }
-    console.log(div);
     return div;
   }
 
@@ -91,7 +89,6 @@ class Home extends Component {
         </div>
       );
     }
-    console.log(div);
     return div;
   }
 
@@ -129,8 +126,8 @@ class Home extends Component {
       return (
         <div className="App">
           <div className="container">
-            <Header />
-            <Nav />
+            <Comps.Header />
+            <Comps.Navigation />
             <div className="row">
               <div className="col-xs-6 col-sm-4">
                 <div className="featuredPost_image" >
@@ -170,9 +167,9 @@ class Home extends Component {
             <hr />
             <br />
 
-            <Jumbotron />
+            <Comps.Jumbotron />
             <br/>
-            <div className="row" classNme="bottom">
+            <div className="row" className="bottom">
               <div className="col-sm-9" className="bottomLeft">
                 {this.createBottomFeaturedPostsLeftTopics()}
               </div>
