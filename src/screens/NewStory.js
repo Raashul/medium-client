@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import HoveringMenu from '../components/HoveringMenu';
-
+import * as Comps from '../components/index';
 import * as api from '../api';
 
 class NewStory extends Component{
 
-  componentDidMount(){
-    if(process.env.REACT_APP_URL) console.log('testing', process.env.REACT_APP_URL);
+  constructor(props){
+    super(props);
+    this.state = {
+      val: {}
+    }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleSubmit() {
+  componentDidMount(){
+
+  }
+
+  onChange = (value) =>{
+    this.setState({val:value});
+  }
+
+  onSubmit = () =>{
+    console.log(this.state.val);
+
     const payload = {
-      body: 'this is first test from UI',
-      title: 'testing my title',
+      body : this.state.val,
+      title: 'first title test',
+      claps: 0,
+      category: 'Technology'
     }
 
     api.postNewStory(payload)
@@ -24,11 +40,12 @@ class NewStory extends Component{
       })
   }
 
+
   render(){
     return(
       <div>
-        <HoveringMenu />
-        <button onClick = {() => this.handleSubmit()}> Submit test</button>
+        <Comps.HoveringMenu onEditorChange={this.onChange}/>
+        <button style={{backgroundColor:'white',color:'black'}}onClick={this.onSubmit}>Submit</button>
       </div>
     );
   }

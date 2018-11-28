@@ -31,3 +31,7 @@ export function getHomeScreenData() {
 export function postNewStory(payload) {
   return api.post('/api/posts', payload);
 }
+
+export function getPost() {
+  return api.get('/api/posts');
+}

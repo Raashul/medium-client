@@ -8,15 +8,6 @@ import styled from 'react-emotion';
 import Video from '../components/video';
 import {Button, Icon, Menu, Toolbar} from '../components/components';
 
-import * as api from '../api';
-
-
-/**
- * Give the menu some styles.
- *
- * @type {Component}
- */
-
 
 const StyledMenu = styled(Menu)`
   padding: 8px 7px 6px;
@@ -37,9 +28,9 @@ const Image = styled('img')`
   max-height: 20em;
   box-shadow: ${props => (props.selected ? '0 0 0 2px blue;' : 'none')};
 `
-const existingValue = JSON.parse(localStorage.getItem('content'));
+const existingValue = JSON.parse(localStorage.getItem('contentTitle'));
 const initialValue = Value.fromJSON(
-  existingValue||
+  existingValue ||
   {
   document:{
     nodes:[
@@ -51,7 +42,7 @@ const initialValue = Value.fromJSON(
             object: 'text',
             leaves: [
               {
-                text: ''
+                text: '',
               }
             ]
           }
@@ -185,7 +176,7 @@ class HoverMenu extends React.Component {
  * @type {Component}
  */
 
-class HoveringMenu extends React.Component {
+class Title extends React.Component {
 
   ref = editor => {
     this.editor = editor
@@ -263,25 +254,6 @@ class HoveringMenu extends React.Component {
       rect.width / 2}px`
   }
 
-  handleSubmit() {
-    const payload = {
-      body: this.state.value,
-      title: 'test title',
-      "claps": 10,
-      "category": "Fitness"
-    }
-    console.log('body', payload.body);
-    //
-    // api.postNewStory(payload)
-    //   .then(response => {
-    //     console.log("response", response);
-    //   })
-    //   .catch(err => {
-    //     console.log('err', err);
-    //   })
-  }
-
-
   /**
    * Render.
    *
@@ -290,7 +262,7 @@ class HoveringMenu extends React.Component {
 
   render() {
     return (
-      <div className='type_block'>
+      <div className='titleEditor'>
         <Editor
           ref={this.ref}
           schema={schema}
@@ -299,7 +271,7 @@ class HoveringMenu extends React.Component {
           renderNode={this.renderNode}
           plugins={plugins}
           onKeyDown={this.onKeyDown}
-          placeholder="Enter some text..."
+          placeholder="Title..."
           value={this.state.value}
           onChange={this.onChange}
           renderEditor={this.renderEditor}
@@ -521,15 +493,14 @@ class HoveringMenu extends React.Component {
   onChange = ({ value }) => {
     if (value.document != this.state.value.document) {
       const content = JSON.stringify(value.toJSON())
+      localStorage.setItem('contentTitle', content)
     }
-    this.setState({ value });
-    this.props.onEditorChange(JSON.stringify(value.toJSON()));
+    this.setState({ value })
   }
-
+  
+  onSubmit = () => {
+    console.log(JSON.stringify(this.state.value.toJSON()));
+  }
 }
 
-/**
- * Export.
- */
-
-export default HoveringMenu;
+export default Title;
